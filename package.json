@@ -1,0 +1,47 @@
+{
+  "name": "Jobs Inn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon /index.js",
+    "desarollo": "concurrently \"npm run dev\" \"npm run watch\"",
+    "start": "node ./index.js",
+    "watch": "webpack --w --mode development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "bcrypt": "^5.0.0",
+    "concurrently": "^5.3.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.6.1",
+    "http-errors": "^1.8.0",
+    "mongoose": "^5.10.3",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.16",
+    "nodemailer-express-handlebars": "^4.0.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "shortid": "^2.2.15",
+    "slug": "^3.3.4",
+    "sweetalert2": "^10.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "handlebars": "^4.5.0",
+    "nodemon": "^2.0.4",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
