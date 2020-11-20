@@ -12,6 +12,7 @@ const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const createErros = require('http-errors')
 const passport = require('./config/passport');
+const cors = require('cors');
 require('dotenv').config({path: 'variables.env'});
 
 
@@ -64,6 +65,8 @@ app.use((req, res, next) => {
     res.locals.mensajes = req.flash();
     next();
 });
+
+app.use(cors())
     
 app.use('/', router());
 
