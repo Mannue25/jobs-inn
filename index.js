@@ -78,16 +78,15 @@ app.use((req, res, next) => {
 
 // Administración de los errores.
 app.use((error, req, res) => {
-  res.locals.mensaje = error.message
-
-  const status = error.status  || 500;
-  res.locals.status = status;
-  res.status(status)
-  res.render('error');
-})
+    res.locals.mensaje = error.message;
+    const status = error.status || 500;
+    res.locals.status = status;
+    res.status(status);
+    res.render('error');
+});
 
 const host = '0.0.0.0';
-const port = process.env.PORT
+const port = process.env.PUERTO
 
 app.listen(port, host,() => {
     console.log('El servidor está corriendo')
