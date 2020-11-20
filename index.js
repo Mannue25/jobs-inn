@@ -10,7 +10,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const bodyParser = require('body-parser');
 const flash = require('connect-flash');
-const createErros = require('http-errors')
+const createError = require('http-errors')
 const passport = require('./config/passport');
 const cors = require('cors');
 require('dotenv').config({path: 'variables.env'});
@@ -70,14 +70,13 @@ app.use(cors())
     
 app.use('/', router());
 
-// 404 página no existente.
-
+// 404 pagina no existente
 app.use((req, res, next) => {
-    next(createErros(400, 'No Econtrado'));
-});
+    next(createError(404, 'No Encontrado'));
+})
 
-// Administración de los errores.
-app.use((error, req, res) => {
+// Administración de los errores
+app.use((error, req, res, next) => {
     res.locals.mensaje = error.message;
     const status = error.status || 500;
     res.locals.status = status;
